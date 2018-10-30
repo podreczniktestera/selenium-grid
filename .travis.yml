@@ -1,0 +1,20 @@
+language: python
+env:
+  - DOCKER_COMPOSE_VERSION=1.4.2
+  - PYTHONPATH=`pwd`
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+  - "3.6-dev" # 3.6 development branch
+  - "3.7-dev" # 3.7 development branch
+  - "nightly" # currently points to 3.7-dev
+# command to install dependencies
+install:
+  - "pip install -r requirements.txt"
+# command to run tests
+script:
+  - "docker-compose up -d"
+  - "docker-compose scale firefox=2"
+  - "pytest -n 2 .\test_suite.py"
+  - "docker-compose down"
