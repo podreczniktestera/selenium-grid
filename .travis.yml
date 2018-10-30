@@ -16,5 +16,5 @@ install:
 script:
   - "docker-compose up -d"
   - "docker-compose scale firefox=2"
-  - "pytest -n 2 .\test_suite.py"
+  - "pytest -n 2 .\\test_suite.py"
   - "docker-compose down"
