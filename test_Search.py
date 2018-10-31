@@ -8,7 +8,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 class Search(unittest.TestCase):
 
     def setUp(self):
-        selenium_grid_url = "http://127.0.0.1:4444/wd/hub"
+        selenium_grid_url = "http://localhost:4444/wd/hub"
         capabilities = DesiredCapabilities.FIREFOX.copy()
         capabilities['platform'] = "LINUX"
         self.driver = webdriver.Remote(desired_capabilities=capabilities,
