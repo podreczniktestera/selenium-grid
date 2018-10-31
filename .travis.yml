@@ -17,5 +17,6 @@ install:
 script:
   - "docker-compose up -d"
   - "docker-compose scale firefox=2"
-  - "sudo ./wait-for-grid.sh pytest -n 2 .\\test_suite.py"
+  - "sudo chmod +x wait-for-grid.sh"
+  - "./wait-for-grid.sh pytest -n 2 .\\test_suite.py"
   - "docker-compose down"
