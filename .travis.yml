@@ -18,5 +18,5 @@ script:
   - "docker-compose up -d"
   - "docker-compose scale firefox=2"
   - "sudo chmod +x wait-for-grid.sh"
-  - "./wait-for-grid.sh pytest .\\test_suite.py"
+  - "./wait-for-grid.sh pytest test_suite.py"
   - "docker-compose down"
