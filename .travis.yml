@@ -1,7 +1,7 @@
+sudo: required
 language: python
 env:
-  - DOCKER_COMPOSE_VERSION=1.4.2
-  - PYTHONPATH=`pwd`
+  - PYTHONPATH=`pwd` DOCKER_COMPOSE_VERSION=1.4.2
 python:
   - "2.7"
   - "3.5"
