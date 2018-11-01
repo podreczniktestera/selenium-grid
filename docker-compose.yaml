@@ -7,8 +7,8 @@ services:
     container_name: selenium-hub
     ports:
       - "4444:4444"
-  firefox:
-    image: selenium/node-firefox:3.14.0
+  chrome:
+    image: selenium/node-chrome:3.14.0
     depends_on:
       - selenium-hub
     environment:
