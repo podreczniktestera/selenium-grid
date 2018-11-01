@@ -16,7 +16,7 @@ install:
 # command to run tests
 before_script:
   - "docker-compose up -d"
-  - "docker-compose scale firefox=2"
+  - "docker-compose scale chrome=2"
   - "sudo chmod +x scripts/wait-for-grid.sh"
   - "./scripts/wait-for-grid.sh"
 script:
