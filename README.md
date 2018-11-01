@@ -6,7 +6,7 @@
   ```bash
     git clone
 
-    cd selenium-behave
+    cd selenium-grid
 
     virtualenv venv --python=python
 
@@ -20,12 +20,12 @@
 * Należy zmienić interpreter Python'a tak aby wskazywał na wirtualne środowisko
 * Oraz dodać konfigurację do uruchamiania testów:
   * Script path: ścieżka do aplikacji `pytest` z wirualnego środowiska
-  * Parameters:  `-n *liczba_podłączonych_węzełów* .\test_suite.py`
+  * Parameters:  `-n *liczba_podłączonych_węzełów* tests/test_suite.py`
 
 
 * Lub w CMD | Terminal
     ```bash
-      pytest -n *liczba_podłączonych_węzełów* .\test_suite.py
+      pytest -n *liczba_podłączonych_węzełów* tests/test_suite.py
     ```
 
 #### Selenium-GRID

@@ -14,9 +14,12 @@ python:
 install:
   - "pip install -r requirements.txt"
 # command to run tests
-script:
+before_script:
   - "docker-compose up -d"
   - "docker-compose scale firefox=2"
-  - "sudo chmod +x wait-for-grid.sh"
-  - "./wait-for-grid.sh pytest test_suite.py"
+  - "sudo chmod +x scripts/wait-for-grid.sh"
+  - "./scripts/wait-for-grid.sh"
+script:
+  - "pytest tests/test_suite.py"
+after_script:
   - "docker-compose down"
