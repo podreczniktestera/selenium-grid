@@ -4,22 +4,24 @@ language: python
 env:
   - PYTHONPATH=`pwd` DOCKER_COMPOSE_VERSION=1.4.2
 python:
-  - "2.7"
-  - "3.5"
-  - "3.6"
-  - "3.6-dev" # 3.6 development branch
-  - "3.7-dev" # 3.7 development branch
-  - "nightly" # currently points to 3.7-dev
-# command to install dependencies
+  - '2.7'
+  - '3.5'
+  - '3.6'
+  - '3.6-dev'
+  - '3.7-dev'
+  - 'nightly'
 install:
-  - "pip install -r requirements.txt"
-# command to run tests
+  - pip install -r requirements.txt
 before_script:
-  - "docker-compose up -d"
-  - "docker-compose scale chrome=2"
-  - "sudo chmod +x scripts/wait-for-grid.sh"
-  - "./scripts/wait-for-grid.sh"
+  - docker-compose up -d
+  - docker-compose scale chrome=2
+  - sudo chmod +x scripts/wait-for-grid.sh
+  - ./scripts/wait-for-grid.sh
 script:
-  - "pytest tests/test_suite.py"
+  - pytest tests/test_suite.py
 after_script:
-  - "docker-compose down"
+  - docker-compose down
+
+notifications:
+  slack:
+    secure: xvLxmlMpaXSj771zwDQkDIfnFi0kpGpVna7SPytHIb1FO/O8Dox5yTXFEeWTqAskGTOm0kLTc8PdOh1yLbZwuXm3OrRNnqJbZBg4aAnVTG1Z5y9JGiSR0daMKwSqgnxJXV1xiu3hfoxoVVhoSwA/28RkwOYMVALsb64W4rE0bcLjirLi2BoJj0VNoFJKzqckQmtEqnuXMFHoQm48d8cyXxjPse3dg44N5rX7aCXJhRO1nGTNyXNpJh+65eckqHwUR/fyZRI/Lw/GgYKsUgEnSIQK1W4IKb0lE8VGiL91lY2pJdJvcJ1+yQypPKcR5xsgQwUuRgA6/t2qej+wB19nBn9LtP03TKaUZpaedUCrtmZcetpSTyz2RuOs9w5NijkpY/FOsIkiK2IP/GzqVp94fuBnkxLHpqgHs9OJ+i/n6r1q9j9oBl3Vfg2HG3DI7wYvsCbzt6COI3D1TP1xxtPC++BdtB/p+Y+T4vK4jrXnorClbUIYbotO3/PWQflQ4y2Fm0G3yfOfwMGhVnwO/iEjk8uYzSZ6xH8pryEHQLgAxASUTFwOg5roE1tAWdtMQIgUGIC7Cr1l9VRmZOUWrzAPsuj+Q1vK+frmUQzNXSFTLvOAbR6eCbjTz9w/lVDJnU9OmluycGjQ5/w/g8kqYpFDAr1oZUmGQ3z2Lw1VTmFGlvg=

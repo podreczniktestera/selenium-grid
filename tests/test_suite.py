@@ -1,5 +1,5 @@
 import unittest
-from test_Search import Search
+from tests.test_Search import Search
 
 
 def suite():

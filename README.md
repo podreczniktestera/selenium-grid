@@ -12,7 +12,7 @@
 
     venv\Scripts\activate.bat
       # lub na Linuxie
-    source venv\Scripts\activate
+    source venv/Scripts/activate
 
     pip install -r requirements.txt
 ```
@@ -50,7 +50,7 @@
       ```
       Zmiana liczby węzłów
       ```bash
-        docker-compose scale firefox=*liczba_węzłów*
+        docker-compose scale chrome=*liczba_węzłów*
       ```
       Zatrzymanie GRIDa    
       ```bash
