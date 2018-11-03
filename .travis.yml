@@ -18,7 +18,7 @@ before_script:
   - sudo chmod +x scripts/wait-for-grid.sh
   - ./scripts/wait-for-grid.sh
 script:
-  - pytest tests/test_suite.py
+  - pytest -n 2 tests/test_suite.py
 after_script:
   - docker-compose down
 
