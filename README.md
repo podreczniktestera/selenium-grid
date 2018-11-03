@@ -20,12 +20,19 @@
 * Należy zmienić interpreter Python'a tak aby wskazywał na wirtualne środowisko
 * Oraz dodać konfigurację do uruchamiania testów:
   * Script path: ścieżka do aplikacji `pytest` z wirualnego środowiska
-  * Parameters:  `-n *liczba_podłączonych_węzełów* tests/test_suite.py`
+  * Parameters:
+    ```bash
+      tests/test_suite.py
+        # lub wielowątkowo
+      -n *liczba_podłączonych_węzełów* tests/test_suite.py 
+    ```
 
 
 * Lub w CMD | Terminal
     ```bash
-      pytest -n *liczba_podłączonych_węzełów* tests/test_suite.py
+      pytest tests/test_suite.py    
+          # lub wielowątkowo
+      pytest -n *liczba_podłączonych_węzełów* tests/test_suite.py 
     ```
 
 #### Selenium-GRID
